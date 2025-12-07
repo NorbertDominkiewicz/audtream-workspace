@@ -1,0 +1,39 @@
+.root {
+    -fx-background-image: url("../assets/img/loginView/temporary-login-background.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 5, 0.5, 0, 0);
+    -fx-background-radius: 12px;
+    -fx-font-family: Verdana
+}
+
+.content-container {
+    -fx-background-color: #151515;
+    -fx-background-radius: 8px;
+}
+
+.title {
+    -fx-text-fill: #9333ea;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.subtitle {
+    -fx-text-fill: #EEEEEE;
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+}
+
+.is-new-user-label {
+    -fx-text-fill: #b9b9b9;
+    -fx-font-size: 10px;
+    -fx-font-weight: 600;
+}
+
+.create-account-label {
+    -fx-padding: 10px;
+    -fx-text-fill: #EEEEEE ;
+    -fx-font-size: 10px;
+    -fx-font-weight: 500;
+}
