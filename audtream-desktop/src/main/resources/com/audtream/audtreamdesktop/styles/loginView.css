@@ -14,14 +14,17 @@
 }
 
 .title {
-    -fx-text-fill: #9333ea;
-    -fx-font-size: 20px;
+    -fx-font-family: Consolas;
+    -fx-text-fill: mediumpurple;
+    -fx-effect: dropshadow(three-pass-box, wheat, 2, 0.6, 0, 0);
+    -fx-font-size: 25px;
     -fx-font-weight: bold;
 }
 
 .subtitle {
+    -fx-font-family: Carlito;
     -fx-text-fill: #EEEEEE;
-    -fx-font-size: 12px;
+    -fx-font-size: 16px;
     -fx-font-weight: 700;
 }
 
@@ -36,4 +39,38 @@
     -fx-text-fill: #EEEEEE ;
     -fx-font-size: 10px;
     -fx-font-weight: 500;
+    -fx-cursor: hand;
+}
+
+.welcome-label {
+    -fx-font-family: "Arial Black";
+    -fx-padding: 10px;
+    -fx-text-fill: #EEEEEE ;
+    -fx-font-size: 30px;
+    -fx-font-weight: 800;
+}
+
+.input {
+    -fx-pref-height: 40px;
+    -fx-effect: dropshadow(three-pass-box, black, 10, 0.5, 0, 0);
+    -fx-background-color: transparent;
+    -fx-border-color: black;
+    -fx-border-radius: 8px;
+    -fx-border-width: 2px;
+    -fx-text-fill: #EEEEEE;
+}
+
+.login-button {
+    -fx-background-color: black;
+    -fx-text-fill: #EEEEEE;
+    -fx-background-radius: 8px;
+    -fx-padding: 10px 20px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, mediumpurple, 10, 0.5, 0, 0);
+}
+
+.login-button:hover {
+    -fx-background-color: #171616;
+    -fx-scale-x: 1.01;
+    -fx-scale-y: 1.01;
 }
