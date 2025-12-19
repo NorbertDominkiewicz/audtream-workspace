@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Feature({ title, author, link, cover }) {
     return (
         <Link to={link} className="block group">
-            <div className="flex flex-col bg-white dark:bg-[#060D13] rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full border border-gray-100 dark:border-gray-700">
+            <div className="flex flex-col bg-[#020508] rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full border border-gray-100 dark:border-gray-700">
                 <div className="relative pb-[100%] overflow-hidden bg-gray-100 dark:bg-gray-700">
                     <img 
                         src={cover} 
@@ -12,10 +12,10 @@ function Feature({ title, author, link, cover }) {
                     />
                 </div>
                 <div className="p-4 grow">
-                    <h3 className="font-bold text-gray-900 dark:text-white text-base truncate mb-1">
+                    <h3 className="font-bold text-white text-base truncate mb-1">
                         {title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm truncate">
+                    <p className="text-gray-300 text-sm truncate">
                         {author}
                     </p>
                 </div>

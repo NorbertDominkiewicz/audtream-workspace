@@ -1,16 +1,26 @@
-import { useState, useEffect } from "react";
+import React from 'react';
 
-function RoleButton( { value } ) {
-    const [isClicked, setIsClicked] = useState(false);
-
-    return(
-        <button className={
-            `text-purple-700 bg-gray-400 px-3 py-2 rounded-lg transform hover:bg-neutral-200 transition-all duration-300 cursor-pointer font-bold ${isClicked ? 'bg-amber-300' : 'bg-amber-600'}`
-        }
+const RoleButton = ({ value, selected, onClick }) => {
+    return (
+        <button
+            type="button"
+            onClick={() => onClick(value)}
+            className={`flex-1 flex flex-col m-4 items-center justify-center p-4 rounded-xl transition-all duration-300 ${
+                selected === value 
+                ? 'bg-purple-900 border-2 border-purple-600' 
+                : 'bg-[#2a2a2a] border-2 border-transparent hover:border-purple-800'
+            }`}
         >
-        { value }
+            <span className="text-white text-lg font-bold mb-2">
+                {value === "Listener" ? "👂 Listener" : "🎤 Artist"}
+            </span>
+            <span className="text-gray-400 text-sm text-center">
+                {value === "Listener" 
+                    ? "Listen to music, create playlists" 
+                    : "Upload tracks, manage your music"}
+            </span>
         </button>
     );
-}
+};
 
 export default RoleButton;
