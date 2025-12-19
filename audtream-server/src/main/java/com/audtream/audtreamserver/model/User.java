@@ -1,63 +1,49 @@
 package com.audtream.audtreamserver.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
+import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "users")
 public class User {
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(unique = true, nullable = false)
     private String username;
+
+    @Column(unique = true, nullable = false)
     private String email;
+
+    @Column(nullable = false)
     private String password;
 
     private String firstName;
     private String lastName;
-    private LocalDateTime createdAt;
-    private boolean active;
-    private Role role;
 
-    private String profilePicturePath;
-    private String bannerPicturePath;
+    @Column(nullable = false)
+    private LocalDateTime createdAt;
+
+    private boolean active = true;
+
+    @Column(nullable = false)
+    private String role = "USER";
 
     public User() {
         this.createdAt = LocalDateTime.now();
+    }
+
+    public User(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.createdAt = LocalDateTime.now();
         this.active = true;
+        this.role = "USER";
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -69,6 +55,18 @@ public class User {
         this.email = email;
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
@@ -77,43 +75,43 @@ public class User {
         this.active = active;
     }
 
-    public void setRole(Role role) {
+    public void setRole(String role) {
         this.role = role;
     }
 
-    public void setProfilePicturePath(String profilePicturePath) {
-        this.profilePicturePath = profilePicturePath;
-    }
-
-    public void setBannerPicturePath(String bannerPicturePath) {
-        this.bannerPicturePath = bannerPicturePath;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
+    public String getRole() {
+        return role;
     }
 
     public boolean isActive() {
         return active;
     }
 
-    public Role getRole() {
-        return role;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
-    public String getProfilePicturePath() {
-        return profilePicturePath;
+    public String getLastName() {
+        return lastName;
     }
 
-    public String getBannerPicturePath() {
-        return bannerPicturePath;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public String getPassword() {
+        return password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public Long getId() {
+        return id;
     }
 }

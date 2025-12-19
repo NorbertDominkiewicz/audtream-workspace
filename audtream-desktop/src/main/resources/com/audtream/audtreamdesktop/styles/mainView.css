@@ -72,7 +72,7 @@
 
 .track-list-container {
     -fx-background-color: #1a1a1a;
-    -fx-background-radius: 18px 18px 50px 50px;
+    -fx-background-radius: 24px;
 }
 
 .profile-container-btn:hover {
@@ -90,7 +90,7 @@
 
 .track-player-container {
     -fx-background-color: #1a1a1a;
-    -fx-background-radius: 50px 50px 0 0;
+    -fx-background-radius: 24px;
     -fx-background-insets: 0 0 0 0;
 }
 
