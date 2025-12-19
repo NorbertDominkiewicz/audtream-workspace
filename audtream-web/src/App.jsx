@@ -6,6 +6,7 @@ import Library from "./views/Library";
 import Home from "./views/Home";
 import Login from "./views/Login";
 import Register from "./views/Register";
+import Profile from "./views/Profile";
 import Song from "./views/Song";
 import Download from "./views/Download";
 import PrivateRoute from "./components/PrivateRoute";
@@ -22,6 +23,7 @@ function App() {
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/track/:id" element={<Song />} />
+                    <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
                     <Route 
                         path="/upload" 
                         element={

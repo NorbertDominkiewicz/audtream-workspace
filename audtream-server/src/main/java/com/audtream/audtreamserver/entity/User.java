@@ -1,7 +1,9 @@
 package com.audtream.audtreamserver.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -23,8 +25,9 @@ public class User {
     @Column(nullable = false)
     private String role;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Track> tracks;
+    private List<Track> tracks = new ArrayList<>();
 
     public User() {
         role = "Listener";
